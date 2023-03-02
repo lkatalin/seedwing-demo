@@ -1,0 +1,30 @@
+#[http]
+#debug = true
+#proxy = "http://0.0.0.0:8282"
+#check-revoke = false
+#multiplexing = false
+#sslVerify = false
+
+#[https]
+
+#[net]
+#git-fetch-with-cli = true
+
+# =========== USE THIS ================
+[source.seedwing]
+registry = "http://localhost:8181/crates-io"
+#registry = "file:///home/lily/Repos/seedwing-proxy/crates.io-index"
+#registry = "file:///home/lily/.seedwing_proxy/cache/crates-io_0.0.0.0_8181/repository/"
+
+[source.crates-io]
+replace-with = "seedwing"
+#registry = "http://localhost:8181/"
+
+# ====================================
+
+# below is wrong, it does not send things to localhost
+#[registry]
+#index = "file:///home/lily/Repos/seedwing-io/crates.io-index"
+
+#[registries.seedwing]
+#index = "http://localhost:8282/info/refs"
